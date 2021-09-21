@@ -29,15 +29,41 @@ namespace Warm_up_loops_tests
         }
 
         [TestMethod]
-        public void Guess_LowerThanAnswer_ReturnsResponseLower()
+        public void Guess_LowerThanAnswer_ReturnsResponseLower()//added by w
         {
+            //Arrange
+            var ui = new UserInterface_mock();
+            var answer = 6;
+            var guess = 2;
+            var expected = GuessResponse.Lower;
+            ui.AddToNumberQueue(guess);
+            var sut = new GameGuessNumber(answer, ui);
+
+            //Act
+            var result = sut.Guess();
+
+            //Assert
+            Assert.AreEqual(expected, result);
+
 
         }
 
         [TestMethod]
-        public void Guess_EqualToAnswer_ReturnsResponseHigher()
+        public void Guess_EqualToAnswer_ReturnsResponseHigher()//added by w
         {
+            //Arrange 
+            var ui = new UserInterface_mock();
+            var answer = 6;
+            var guess = 6;
+            var expected = GuessResponse.Correct;
+            ui.AddToNumberQueue(guess);
+            var sut = new GameGuessNumber(answer, ui);
 
+            //Act
+            var result = sut.Guess();
+
+            //Assert
+            Assert.AreEqual(expected, result);
         }
     }
 }

@@ -1,12 +1,14 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Warm_up_loops;//add using warm up 
+using Warm_up_loops_tests;
 
 namespace Warm_up_loops_tests
 {
     [TestClass]
     public class ForLoops_tests
     {
-        
+       [TestMethod] 
         public void GetLowest_ArrayWithMinValue_ReturnsLowestNumber()
         {
             //Arrange
@@ -78,7 +80,7 @@ namespace Warm_up_loops_tests
             var result = sut.GetHighest(arr);
 
             //Assert
-            Assert.AreEqual(expected, result);
+           Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
